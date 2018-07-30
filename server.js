@@ -3,9 +3,9 @@ var app = express();
 
 var path = require("path");
 
-var HTTP_PORT = process.env.PORT || 8085;
+var HTTP_PORT = process.env.PORT || 8080;
 
-app.use(express.static(path.resolve(__dirname + "/public")));
+app.use(express.static("public"));
 
 app.use((req, res) => {
     res.sendFile(path.join(__dirname + "/public/index.html"));
