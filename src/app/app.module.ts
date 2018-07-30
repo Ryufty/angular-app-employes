@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -9,7 +13,11 @@ import { HomeComponent } from './home/home.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { PositionsComponent } from './positions/positions.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { AppRoutingModule } from './app-routing.module';
+
+import { EmployeeService } from './data/employee.service';
+import { PositionService } from './data/position.service';
+import { EmployeeComponent } from './employee/employee.component';
+import { PositionComponent } from './position/position.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +28,18 @@ import { AppRoutingModule } from './app-routing.module';
     HomeComponent,
     EmployeesComponent,
     PositionsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EmployeeComponent,
+    PositionComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [EmployeeService, PositionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
