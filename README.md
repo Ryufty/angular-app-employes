@@ -1,6 +1,7 @@
 # PracticeApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
+Deployed on Heroku: https://angular-application-employees.herokuapp.com/     note: Heroku takes few seconds to start up the application
 
 ## Development server
 
